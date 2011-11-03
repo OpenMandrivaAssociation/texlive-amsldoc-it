@@ -1,5 +1,11 @@
+# revision 15878
+# category Package
+# catalog-ctan undef
+# catalog-date undef
+# catalog-license undef
+# catalog-version undef
 Name:		texlive-amsldoc-it
-Version:	20111101
+Version:	20111103
 Release:	1
 Summary:	TeXLive amsldoc-it package
 Group:		Publishing
@@ -20,6 +26,7 @@ TeXLive amsldoc-it package.
 %files
 %doc %{_texmfdistdir}/doc/latex/amsldoc-it/itamsldoc.pdf
 %doc %{_texmfdistdir}/doc/latex/amsldoc-it/itamsldoc.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -30,3 +37,5 @@ TeXLive amsldoc-it package.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
